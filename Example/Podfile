@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ForceTouchActionSheet_Example' do
+  pod 'ForceTouchActionSheet', :path => '../'
+
+  target 'ForceTouchActionSheet_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
