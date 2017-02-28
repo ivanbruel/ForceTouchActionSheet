@@ -73,12 +73,12 @@ class ForceTouchTableViewCell: UITableViewCell {
     addSubview(label)
 
     let views: [String : Any] = ["iconImageView": iconImageView, "label": label]
-    let visualFormat = "H:|-20-[iconImageView(40)]-20-[label]"
+    let visualFormat = "H:|-20-[iconImageView(30)]-20-[label]"
     NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: visualFormat,
                                                                options: [],
                                                                metrics: nil, views: views))
 
-    NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-14-[iconImageView]-14-|",
+    NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-16-[iconImageView]-16-|",
                                                                options: [],
                                                                metrics: nil, views: views))
 

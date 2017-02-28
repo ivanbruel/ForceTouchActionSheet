@@ -68,7 +68,9 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
     let showBelow = height > imageView.frame.minY
     let showToTheRight = width > imageView.frame.minX
 
-    let xOrigin = showToTheRight ? imageView.frame.origin.x : imageView.frame.maxX - width
+    var xOrigin = showToTheRight ? imageView.frame.origin.x : imageView.frame.maxX - width
+    xOrigin = max(10, xOrigin)
+    xOrigin = min(bounds.width - width - 10, xOrigin)
     let yOrigin = showBelow ? imageView.frame.maxY + 10 : imageView.frame.origin.y - 10 - height
     return CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
   }
