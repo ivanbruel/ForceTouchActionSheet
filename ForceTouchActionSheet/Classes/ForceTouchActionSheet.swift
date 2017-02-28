@@ -25,8 +25,9 @@ public class ForceTouchActionSheet: NSObject {
 
     super.init()
 
-    view.addGestureRecognizer(
-      ForceTouchGestureRecognizer(target: self, action: #selector(forceTouchRecognized(_:))))
+    let gesture = ForceTouchGestureRecognizer(target: self, action: #selector(forceTouchRecognized(_:)))
+    gesture.cancelsTouchesInView = false
+    view.addGestureRecognizer(gesture)
   }
 
   func forceTouchRecognized(_ gestureRecognizer: ForceTouchGestureRecognizer) {
