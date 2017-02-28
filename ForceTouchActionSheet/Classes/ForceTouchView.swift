@@ -103,7 +103,7 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
     addSubview(imageView)
 
     backgroundImageView.frame = bounds
-    backgroundImageView.image = backgroundImage
+    backgroundImageView.image = isBlurDisabled ? nil : backgroundImage
     imageView.frame = imageFrame
     imageView.image = image
     imageView.layer.cornerRadius = imageCornerRadius
@@ -112,7 +112,6 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
     tableView.frame = imageFrame
     tableView.layer.cornerRadius = imageCornerRadius
     tableView.isHidden = true
-    backgroundImageView.isHidden = isBlurDisabled
 
     backgroundImageView
       .addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismiss)))
