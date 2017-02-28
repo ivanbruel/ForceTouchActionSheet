@@ -1,6 +1,5 @@
 ForceTouchActionSheet
 ===============
-[![CI Status](http://img.shields.io/travis/ivanbruel/ForceTouchActionSheet.svg?style=flat)](https://travis-ci.org/ivanbruel/ForceTouchActionSheet)
 [![Version](https://img.shields.io/cocoapods/v/ForceTouchActionSheet.svg?style=flat)](http://cocoapods.org/pods/ForceTouchActionSheet)
 [![License](https://img.shields.io/cocoapods/l/ForceTouchActionSheet.svg?style=flat)](http://cocoapods.org/pods/ForceTouchActionSheet)
 [![Platform](https://img.shields.io/cocoapods/p/ForceTouchActionSheet.svg?style=flat)](http://cocoapods.org/pods/ForceTouchActionSheet)
