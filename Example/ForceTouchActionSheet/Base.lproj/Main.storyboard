@@ -1,25 +1,141 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ForceTouchActionSheet_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view key="view" contentMode="scaleToFill" id="Ez2-fC-GcR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="YQf-Bl-rtb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssZ-I6-8H5">
+                                <rect key="frame" x="20" y="20" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ssZ-I6-8H5" secondAttribute="height" multiplier="1:1" id="GSc-gY-h6c"/>
+                                    <constraint firstAttribute="width" constant="64" id="wSn-lP-gEH"/>
+                                </constraints>
+                                <state key="normal" image="swift"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gx-HS-zLi">
+                                <rect key="frame" x="295" y="583" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="TS9-ou-uLP"/>
+                                    <constraint firstAttribute="width" secondItem="3gx-HS-zLi" secondAttribute="height" multiplier="1:1" id="s1K-Gg-3SF"/>
+                                </constraints>
+                                <state key="normal" image="swift"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9z-1V-2tA">
+                                <rect key="frame" x="155" y="301" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="PFe-Bo-Rdf"/>
+                                    <constraint firstAttribute="width" secondItem="Z9z-1V-2tA" secondAttribute="height" multiplier="1:1" id="cIB-1A-TzO"/>
+                                </constraints>
+                                <state key="normal" image="swift"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91F-h9-nyD">
+                                <rect key="frame" x="20" y="583" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="91F-h9-nyD" secondAttribute="height" multiplier="1:1" id="EXb-hF-NNM"/>
+                                    <constraint firstAttribute="width" constant="64" id="Sgh-iN-wow"/>
+                                </constraints>
+                                <state key="normal" image="swift"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgZ-mG-t2D">
+                                <rect key="frame" x="291" y="20" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="9Bz-oX-3a1"/>
+                                    <constraint firstAttribute="width" secondItem="RgZ-mG-t2D" secondAttribute="height" multiplier="1:1" id="SfK-Tj-4h8"/>
+                                </constraints>
+                                <state key="normal" image="swift"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YQf-Bl-rtb" firstAttribute="top" secondItem="Ez2-fC-GcR" secondAttribute="top" id="0BY-aP-zOn"/>
+                            <constraint firstAttribute="trailing" secondItem="YQf-Bl-rtb" secondAttribute="trailing" id="1ty-e9-aH7"/>
+                            <constraint firstItem="ssZ-I6-8H5" firstAttribute="top" secondItem="Ez2-fC-GcR" secondAttribute="top" constant="20" id="6kM-RJ-jDe"/>
+                            <constraint firstAttribute="bottom" secondItem="YQf-Bl-rtb" secondAttribute="bottom" id="7cx-wO-fwt"/>
+                            <constraint firstItem="ssZ-I6-8H5" firstAttribute="width" secondItem="ssZ-I6-8H5" secondAttribute="height" multiplier="1:1" id="7ol-th-Xee"/>
+                            <constraint firstItem="91F-h9-nyD" firstAttribute="width" secondItem="91F-h9-nyD" secondAttribute="height" multiplier="1:1" id="DFJ-PM-Ymr"/>
+                            <constraint firstItem="YQf-Bl-rtb" firstAttribute="leading" secondItem="Ez2-fC-GcR" secondAttribute="leading" id="Ijt-1y-Xa0"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="3gx-HS-zLi" secondAttribute="bottom" constant="20" id="NGq-ms-361"/>
+                            <constraint firstAttribute="trailing" secondItem="RgZ-mG-t2D" secondAttribute="trailing" constant="20" id="Nku-hP-c0F"/>
+                            <constraint firstItem="Z9z-1V-2tA" firstAttribute="centerX" secondItem="Ez2-fC-GcR" secondAttribute="centerX" id="Qtr-1x-KNh"/>
+                            <constraint firstItem="3gx-HS-zLi" firstAttribute="width" secondItem="3gx-HS-zLi" secondAttribute="height" multiplier="1:1" id="UY4-Um-ulH"/>
+                            <constraint firstItem="RgZ-mG-t2D" firstAttribute="width" secondItem="RgZ-mG-t2D" secondAttribute="height" multiplier="1:1" id="WgN-vS-YvI"/>
+                            <constraint firstItem="RgZ-mG-t2D" firstAttribute="top" secondItem="Ez2-fC-GcR" secondAttribute="top" constant="20" id="YYZ-35-N1e"/>
+                            <constraint firstAttribute="trailing" secondItem="3gx-HS-zLi" secondAttribute="trailing" constant="20" id="ajR-b1-8H9"/>
+                            <constraint firstItem="91F-h9-nyD" firstAttribute="leading" secondItem="Ez2-fC-GcR" secondAttribute="leading" constant="20" id="cRM-cf-LeI"/>
+                            <constraint firstItem="RgZ-mG-t2D" firstAttribute="width" secondItem="RgZ-mG-t2D" secondAttribute="height" multiplier="1:1" id="fw2-CK-pS1"/>
+                            <constraint firstItem="ssZ-I6-8H5" firstAttribute="width" secondItem="ssZ-I6-8H5" secondAttribute="height" multiplier="1:1" id="iZO-Bv-v03"/>
+                            <constraint firstItem="3gx-HS-zLi" firstAttribute="width" secondItem="3gx-HS-zLi" secondAttribute="height" multiplier="1:1" id="qwP-df-Qmw"/>
+                            <constraint firstItem="RgZ-mG-t2D" firstAttribute="width" secondItem="RgZ-mG-t2D" secondAttribute="height" multiplier="1:1" id="vdV-VM-dxX"/>
+                            <constraint firstItem="ssZ-I6-8H5" firstAttribute="leading" secondItem="Ez2-fC-GcR" secondAttribute="leading" constant="20" id="wOE-cY-CYs"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="91F-h9-nyD" secondAttribute="bottom" constant="20" id="zdK-3L-mC3"/>
+                            <constraint firstItem="Z9z-1V-2tA" firstAttribute="centerY" secondItem="Ez2-fC-GcR" secondAttribute="centerY" id="zvN-YP-A2I"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="buttons" destination="ssZ-I6-8H5" id="kfU-5u-f72"/>
+                        <outletCollection property="buttons" destination="RgZ-mG-t2D" id="3eI-Lu-RNM"/>
+                        <outletCollection property="buttons" destination="Z9z-1V-2tA" id="icU-XE-rik"/>
+                        <outletCollection property="buttons" destination="91F-h9-nyD" id="BjK-Oe-iDn"/>
+                        <outletCollection property="buttons" destination="3gx-HS-zLi" id="fG3-IK-EpN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="2560" height="1600"/>
+        <image name="swift" width="1200" height="1200"/>
+    </resources>
 </document>

@@ -1,0 +1,6 @@
+framework module ForceTouchActionSheet {
+  umbrella header "ForceTouchActionSheet-umbrella.h"
+
+  export *
+  module * { export * }
+}

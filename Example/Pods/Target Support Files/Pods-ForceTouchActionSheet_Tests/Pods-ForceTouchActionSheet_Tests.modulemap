@@ -1,0 +1,6 @@
+framework module Pods_ForceTouchActionSheet_Tests {
+  umbrella header "Pods-ForceTouchActionSheet_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

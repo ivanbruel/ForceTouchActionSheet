@@ -1,0 +1,16 @@
+PODS:
+  - ForceTouchActionSheet (0.1.0)
+
+DEPENDENCIES:
+  - ForceTouchActionSheet (from `../`)
+
+EXTERNAL SOURCES:
+  ForceTouchActionSheet:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ForceTouchActionSheet: 920c2a3b65414a0d43a2e3be8988f3480907a190
+
+PODFILE CHECKSUM: 329e02766f27b3453972fcfc4d7b1527d1f807af
+
+COCOAPODS: 1.2.0
