@@ -78,7 +78,7 @@ class ForceTouchTableViewCell: UITableViewCell {
                                                                options: [],
                                                                metrics: nil, views: views))
 
-    NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[iconImageView]-10-|",
+    NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-14-[iconImageView]-14-|",
                                                                options: [],
                                                                metrics: nil, views: views))
 
