@@ -24,7 +24,7 @@ class ViewController: UIViewController {
                        ForceTouchAction(icon: UIImage(named: "CameraIcon")!, title: "Action 2"),
                        ForceTouchAction(icon: UIImage(named: "CameraIcon")!, title: "Action 3")]
         forceTouches = buttons.map { button in
-            ForceTouchActionSheet(view: button, actions: actions, completion: { index in
+            ForceTouchActionSheet(view: button, actions: actions, isBlurDisabled: true, completion: { index in
                 print("clicked button \(button) \(index)")
             })
         }

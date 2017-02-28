@@ -17,7 +17,7 @@ public class ForceTouchActionSheet: NSObject {
   private let view: UIView
   private var forceTouchView: ForceTouchView? = nil
 
-  public init(view: UIView, actions: [ForceTouchAction], completion: @escaping (Int?) -> Void, isBlurDisabled: Bool = false) {
+  public init(view: UIView, actions: [ForceTouchAction], isBlurDisabled: Bool = false, completion: @escaping (Int?) -> Void) {
     self.view = view
     self.completion = completion
     self.actions = actions
