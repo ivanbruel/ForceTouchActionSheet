@@ -12,14 +12,16 @@ public class ForceTouchActionSheet: NSObject {
 
   public var completion: ((Int?) -> Void)?
   public var actions: [ForceTouchAction]
+  public var isBlurDisabled: Bool
 
   private let view: UIView
   private var forceTouchView: ForceTouchView? = nil
 
-  public init(view: UIView, actions: [ForceTouchAction], completion: @escaping (Int?) -> Void) {
+  public init(view: UIView, actions: [ForceTouchAction], completion: @escaping (Int?) -> Void, isBlurDisabled: Bool = false) {
     self.view = view
     self.completion = completion
     self.actions = actions
+    self.isBlurDisabled = isBlurDisabled
 
     super.init()
 
@@ -48,7 +50,7 @@ public class ForceTouchActionSheet: NSObject {
     let frame = view.absoluteFrame
     let forceTouchView = ForceTouchView(backgroundImage: windowImage, image: image,
                                         imageFrame: frame, imageCornerRadius: cornerRadius,
-                                        actions: actions, completion: { index in
+                                        actions: actions, isBlurDisabled: isBlurDisabled, completion: { index in
                                           self.completion?(index)
                                           self.destroy()
     })

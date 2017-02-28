@@ -59,6 +59,7 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
   private let imageCornerRadius: CGFloat
   private let actions: [ForceTouchAction]
   private let completion: (Int?) -> Void
+  private let isBlurDisabled: Bool
 
   private var tableViewFrame: CGRect {
     let width = ForceTouchView.tableWidth
@@ -77,12 +78,13 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
 
   // MARK: - Initializer
   init(backgroundImage: UIImage, image: UIImage, imageFrame: CGRect, imageCornerRadius: CGFloat,
-       actions: [ForceTouchAction], completion: @escaping (Int?) -> Void) {
+       actions: [ForceTouchAction], isBlurDisabled: Bool, completion: @escaping (Int?) -> Void) {
     self.backgroundImage = backgroundImage
     self.image = image
     self.imageFrame = imageFrame
     self.imageCornerRadius = imageCornerRadius
     self.actions = actions
+    self.isBlurDisabled = isBlurDisabled
     self.completion = completion
 
     super.init(frame: CGRect(origin: .zero, size: backgroundImage.size))
@@ -110,6 +112,7 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
     tableView.frame = imageFrame
     tableView.layer.cornerRadius = imageCornerRadius
     tableView.isHidden = true
+    backgroundImageView.isHidden = isBlurDisabled
 
     backgroundImageView
       .addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismiss)))
@@ -117,9 +120,10 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
 
   func show(percentage: CGFloat) {
     guard !isShowing else { return }
-    let blurRadius = percentage * ForceTouchView.maxBlurRadius
-    backgroundImageView.image = backgroundImage.blur(blurRadius: blurRadius)
-
+    if !isBlurDisabled {
+      let blurRadius = percentage * ForceTouchView.maxBlurRadius
+      backgroundImageView.image = backgroundImage.blur(blurRadius: blurRadius)
+    }
     let scale = 1 + (percentage * 0.4)
     highlightView.transform = CGAffineTransform(scaleX: scale, y: scale)
 
