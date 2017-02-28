@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ForceTouchActionSheet'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of ForceTouchActionSheet.'
+  s.version          = '0.1'
+  s.summary          = 'ForceTouchActionSheet is a UI component to replicate iOS\'s Springboard force touch on icons for shortcuts.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,19 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  ForceTouchActionSheet is a UI component to replicate iOS's Springboard force touch on icons for shortcuts.
+  It blurs the background gradually while force touching an item and shows the popup when force reaches the maximum.
                        DESC
 
   s.homepage         = 'https://github.com/ivanbruel/ForceTouchActionSheet'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots      = 'https://raw.githubusercontent.com/ivanbruel/ForceTouchActionSheet/master/Resources/forcetouch_demo.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'ivanbruel' => 'ivan.bruel@gmail.com' }
+  s.author           = { 'Ivan Bruel' => 'ivan.bruel@gmail.com' }
   s.source           = { :git => 'https://github.com/ivanbruel/ForceTouchActionSheet.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/ivanbruel'
 
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'ForceTouchActionSheet/Classes/**/*'
-
-  # s.resource_bundles = {
-  #   'ForceTouchActionSheet' => ['ForceTouchActionSheet/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
