@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet fileprivate var buttons: [UIButton]!
     var forceTouches: [ForceTouchActionSheet] = []
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let actions = [ForceTouchAction(icon: UIImage(named: "CameraIcon")!, title: "Action 1"),
