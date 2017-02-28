@@ -10,9 +10,10 @@ import UIKit
 
 public class ForceTouchActionSheet: NSObject {
 
+  public var completion: ((Int?) -> Void)?
+  public var actions: [ForceTouchAction]
+
   private let view: UIView
-  private let completion: (Int?) -> Void
-  private let actions: [ForceTouchAction]
   private var forceTouchView: ForceTouchView? = nil
 
   public init(view: UIView, actions: [ForceTouchAction], completion: @escaping (Int?) -> Void) {
@@ -21,7 +22,7 @@ public class ForceTouchActionSheet: NSObject {
     self.actions = actions
 
     super.init()
-    
+
     view.addGestureRecognizer(
       ForceTouchGestureRecognizer(target: self, action: #selector(forceTouchRecognized(_:))))
   }
@@ -48,7 +49,7 @@ public class ForceTouchActionSheet: NSObject {
     let forceTouchView = ForceTouchView(backgroundImage: windowImage, image: image,
                                         imageFrame: frame, imageCornerRadius: cornerRadius,
                                         actions: actions, completion: { index in
-                                          self.completion(index)
+                                          self.completion?(index)
                                           self.destroy()
     })
     guard let window = UIApplication.shared.keyWindow else {

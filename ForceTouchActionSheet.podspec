@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ForceTouchActionSheet'
-  s.version          = '0.1'
+  s.version          = '0.1.1'
   s.summary          = 'ForceTouchActionSheet is a UI component to replicate iOS\'s Springboard force touch on icons for shortcuts.'
 
 # This description is used to generate tags and improve search results.
