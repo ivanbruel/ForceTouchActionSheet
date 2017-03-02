@@ -13,7 +13,7 @@ class ForceTouchGestureRecognizer: UIGestureRecognizer {
 
   private(set) var forceValue: CGFloat = 0
 
-  var minimumValue: CGFloat = 0
+  var minimumValue: CGFloat = 0.1
   var tolerance: CGFloat = 1
 
   private var maxValue: CGFloat = 0

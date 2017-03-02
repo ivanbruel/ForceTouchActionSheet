@@ -25,7 +25,27 @@ public class ForceTouchActionSheet: NSObject {
 
     super.init()
 
+    setup()
+
+  }
+
+  private func setup() {
+    if view.traitCollection.forceTouchCapability == .available {
+      setupForceTouch()
+    } else {
+      setupLongPress()
+    }
+  }
+
+  private func setupForceTouch() {
     let gesture = ForceTouchGestureRecognizer(target: self, action: #selector(forceTouchRecognized(_:)))
+    gesture.cancelsTouchesInView = false
+    gesture.minimumValue = 0.2
+    view.addGestureRecognizer(gesture)
+  }
+
+  private func setupLongPress() {
+    let gesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressRecognized(_:)))
     gesture.cancelsTouchesInView = false
     view.addGestureRecognizer(gesture)
   }
@@ -40,6 +60,13 @@ public class ForceTouchActionSheet: NSObject {
       }
     }
     forceTouchView?.show(percentage: force)
+  }
+
+  func longPressRecognized(_ gestureRecognizer: UILongPressGestureRecognizer) {
+    if gestureRecognizer.state == .began {
+      prepare()
+      forceTouchView?.show()
+    }
   }
 
   private func prepare() {

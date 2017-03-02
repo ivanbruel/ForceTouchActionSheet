@@ -133,6 +133,12 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
   }
 
+  func show() {
+    UIView.animate(withDuration: 0.3) { 
+      self.show(percentage: 1)
+    }
+  }
+
   func dismiss() {
     hideActions { self.completion(nil) }
   }
