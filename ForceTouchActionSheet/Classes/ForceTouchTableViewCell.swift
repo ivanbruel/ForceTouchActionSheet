@@ -26,9 +26,8 @@ class ForceTouchTableViewCell: UITableViewCell {
     return iconImageView
   }()
 
-  private lazy var label: UILabel = {
+  var label: UILabel = {
     let label = UILabel()
-    label.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
     label.textColor = .black
     label.translatesAutoresizingMaskIntoConstraints = false
     label.setContentHuggingPriority(UILayoutPriorityDefaultLow, for: .horizontal)

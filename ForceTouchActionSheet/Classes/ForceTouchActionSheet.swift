@@ -14,6 +14,12 @@ public class ForceTouchActionSheet: NSObject {
   public var actions: [ForceTouchAction]
   public var isBlurDisabled: Bool
 
+  public var font: UIFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium){
+        didSet {
+            self.forceTouchView?.titleFont = font
+        }
+    }
+
   private let view: UIView
   private var forceTouchView: ForceTouchView? = nil
 
