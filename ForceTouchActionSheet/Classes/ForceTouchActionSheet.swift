@@ -77,8 +77,11 @@ public class ForceTouchActionSheet: NSObject {
 
   private func prepare() {
     guard actions.count > 0 else {
-      let generator = UINotificationFeedbackGenerator()
-      generator.notificationOccurred(.error)
+        if #available(iOS 10.0, *) {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.error)
+        }
+
       return
     }
     guard let windowImage = view.snapshotWindow(), let image = view.snapshot() else {

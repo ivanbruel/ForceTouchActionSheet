@@ -161,8 +161,10 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
   }
 
   private func vibrate() {
-    let generator = UIImpactFeedbackGenerator(style: .heavy)
-    generator.impactOccurred()
+    if #available(iOS 10.0, *) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+         generator.impactOccurred()
+    }
   }
 
   private func showActions() {
@@ -218,7 +220,9 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-    let generator = UIImpactFeedbackGenerator(style: .medium)
-    generator.impactOccurred()
+    if #available(iOS 10.0, *) {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+    }
   }
 }
