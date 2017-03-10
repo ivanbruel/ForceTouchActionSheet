@@ -196,6 +196,11 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
     let action = actions[indexPath.row]
     cell.title = action.title
     cell.icon = action.icon
+    
+    if indexPath.row == (actions.count - 1){
+        cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0)
+    }
+    
     return cell
   }
 
