@@ -13,6 +13,13 @@ public class ForceTouchActionSheet: NSObject {
   public var completion: ((Int?) -> Void)?
   public var actions: [ForceTouchAction]
   public var isBlurDisabled: Bool
+  public var forceTouchDetected: (((Void) -> Void))?
+
+  public var font: UIFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium){
+        didSet {
+            self.forceTouchView?.titleFont = font
+        }
+    }
 
   private let view: UIView
   private var forceTouchView: ForceTouchView? = nil
@@ -53,6 +60,7 @@ public class ForceTouchActionSheet: NSObject {
   func forceTouchRecognized(_ gestureRecognizer: ForceTouchGestureRecognizer) {
     let force = gestureRecognizer.forceValue
     if forceTouchView == nil && gestureRecognizer.state == .began {
+      forceTouchDetected?()
       prepare()
     } else if gestureRecognizer.state == .cancelled || gestureRecognizer.state == .ended {
       if let forceTouchView = forceTouchView, !forceTouchView.isShowing {
@@ -64,6 +72,7 @@ public class ForceTouchActionSheet: NSObject {
 
   func longPressRecognized(_ gestureRecognizer: UILongPressGestureRecognizer) {
     if gestureRecognizer.state == .began {
+      forceTouchDetected?()
       prepare()
       forceTouchView?.show()
     }
@@ -71,8 +80,11 @@ public class ForceTouchActionSheet: NSObject {
 
   private func prepare() {
     guard actions.count > 0 else {
-      let generator = UINotificationFeedbackGenerator()
-      generator.notificationOccurred(.error)
+        if #available(iOS 10.0, *) {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.error)
+        }
+
       return
     }
     guard let windowImage = view.snapshotWindow(), let image = view.snapshot() else {

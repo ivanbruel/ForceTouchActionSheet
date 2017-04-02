@@ -26,9 +26,8 @@ class ForceTouchTableViewCell: UITableViewCell {
     return iconImageView
   }()
 
-  private lazy var label: UILabel = {
+  var label: UILabel = {
     let label = UILabel()
-    label.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
     label.textColor = .black
     label.translatesAutoresizingMaskIntoConstraints = false
     label.setContentHuggingPriority(UILayoutPriorityDefaultLow, for: .horizontal)
@@ -73,7 +72,7 @@ class ForceTouchTableViewCell: UITableViewCell {
     addSubview(label)
 
     let views: [String : Any] = ["iconImageView": iconImageView, "label": label]
-    let visualFormat = "H:|-20-[iconImageView(30)]-20-[label]"
+    let visualFormat = "H:|-16-[iconImageView(30)]-10-[label]"
     NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: visualFormat,
                                                                options: [],
                                                                metrics: nil, views: views))

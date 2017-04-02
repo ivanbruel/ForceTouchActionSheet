@@ -77,6 +77,7 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
 
   // MARK: - Public Properties
   var isShowing: Bool = false
+  var titleFont: UIFont?
 
   // MARK: - Initializer
   init(backgroundImage: UIImage, image: UIImage, imageFrame: CGRect, imageCornerRadius: CGFloat,
@@ -160,8 +161,10 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
   }
 
   private func vibrate() {
-    let generator = UIImpactFeedbackGenerator(style: .heavy)
-    generator.impactOccurred()
+    if #available(iOS 10.0, *) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+         generator.impactOccurred()
+    }
   }
 
   private func showActions() {
@@ -196,6 +199,15 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
     let action = actions[indexPath.row]
     cell.title = action.title
     cell.icon = action.icon
+
+    if let titleFont = self.titleFont {
+        cell.label.font = titleFont
+    }
+
+    if indexPath.row == (actions.count - 1){
+        cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0)
+    }
+
     return cell
   }
 
@@ -208,7 +220,9 @@ class ForceTouchView: UIView, UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-    let generator = UIImpactFeedbackGenerator(style: .medium)
-    generator.impactOccurred()
+    if #available(iOS 10.0, *) {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+    }
   }
 }
